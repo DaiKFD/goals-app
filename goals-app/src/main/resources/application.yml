@@ -1,0 +1,27 @@
+server:
+  port: 1404
+spring:
+  profiles:
+    active: daikfd
+
+---
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connectionTimeout: '20000'
+      maximumPoolSize: '5'
+    url: jdbc:postgresql://localhost:4444/goal-app
+    username: postgres
+    password: '1234'
+  jpa:
+    hibernate:
+      ddl-auto: update
+  config:
+    activate:
+      on-profile: daikfd
+#server:
+#  address: 10.10.66.247
+#  port: 1404
+#welcome:
+#  message: Welcome To DaiKFD
